@@ -14,6 +14,8 @@
       $('#api').bind('playingTrackChanged.rdio', function(e, playingTrack, sourcePosition) {
         if (playingTrack) {
           duration = playingTrack.duration;
+		  
+          //$('#currentuser').text($(this).rdio().currentUser().firstName);
           $('#art').attr('src', playingTrack.icon);
           $('#track').text(playingTrack.name);
           $('#album').text(playingTrack.album);
@@ -117,6 +119,7 @@
  <div id="api"></div>
   <img id="art" src="" height="200" width="200" style="float:left;margin-right:20px;">
   <div>
+    <div><b>Current User: </b><span id="currentuser"></span></div>
     <div><b>Track: </b><span id="track"></span></div>
     <div><b>Album: </b><span id="album"></span></div>
     <div><b>Artist: </b><span id="artist"></span></div>
